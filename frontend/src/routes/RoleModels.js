@@ -1,13 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-
-
-const getEndpoint = (endpoint) => {
-  const response = fetch(`http://localhost:3002${endpoint}`, {
-    method: 'GET',
-  });
-  return response;
-};
+import { getEndpoint } from '../util/calls';
 
 
 const RoleModels = () => {

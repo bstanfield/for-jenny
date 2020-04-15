@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './styles/index.css';
 import App from './App';
 import { Route, BrowserRouter as Router, } from 'react-router-dom';
-import * as serviceWorker from './serviceWorker';
+import Users from './routes/Users';
 import RoleModels from './routes/RoleModels';
 import Home from './routes/Home';
 
@@ -27,14 +27,16 @@ ReactDOM.render(
         </App>
       )}
     />
-  </Router>,
+        <Route
+      exact
+      path="/users"
+      render={() => (
+        <App>
+          <Users />
+        </App>
+      )}
+    />
+  </Router>
+  ,
   document.getElementById('root')
 );
-
-
-
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
