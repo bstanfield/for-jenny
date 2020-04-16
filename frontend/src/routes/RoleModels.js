@@ -5,6 +5,7 @@ import { getEndpoint } from '../util/calls';
 
 const RoleModels = () => {
   const [roleModels, setRoleModels] = useState([]);
+
   useEffect(() => {
     const getRoleModels = async () => {
       const response = await getEndpoint('/role-models');
