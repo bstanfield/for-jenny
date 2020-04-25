@@ -25,4 +25,11 @@ app.get('/users', async (req, res) => {
   res.send({ users });
 });
 
+app.get('/users/:id', async (req, res) => {
+  const userId = req.params.id;
+  const results = await knex.select().from('users').where({ id: userId });
+  const users = results.map((obj) => obj.name);
+  res.send({ users });
+});
+
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
